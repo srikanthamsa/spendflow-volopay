@@ -184,7 +184,7 @@ export default function BillList({ bills, onSelectBill, onApproveQuick }) {
                   </td>
 
                   <td className="py-3 px-4 text-right font-mono text-zinc-100 tabular-nums">
-                    {bill.currency} {bill.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    ₹{bill.totalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </td>
 
                   <td className="py-3 px-3 text-right" onClick={(e) => e.stopPropagation()}>

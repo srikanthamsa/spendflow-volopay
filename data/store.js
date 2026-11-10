@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { v4 as uuidv4 } from 'uuid';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,7 +15,7 @@ const INITIAL_BILLS = [
     category: "Cloud Infrastructure",
     department: "Engineering",
     costCenter: "ENG-INFRA-01",
-    currency: "USD",
+    currency: "INR",
     issueDate: "2026-11-01",
     dueDate: "2026-11-25",
     paymentTerms: "Net 25",
@@ -24,14 +23,14 @@ const INITIAL_BILLS = [
     source: "Claude MCP",
     notes: "Monthly production compute and database cluster. Claude extracted this from AWS billing email summary.",
     lineItems: [
-      { id: "li-1", description: "EC2 m6i.4xlarge Production Kubernetes Nodes", quantity: 6, unitPrice: 420.00, total: 2520.00 },
-      { id: "li-2", description: "Amazon Aurora PostgreSQL Multi-AZ Cluster", quantity: 1, unitPrice: 850.50, total: 850.50 },
-      { id: "li-3", description: "CloudFront CDN Data Transfer (14TB)", quantity: 14, unitPrice: 34.28, total: 480.00 }
+      { id: "li-1", description: "EC2 m6i.4xlarge Production Kubernetes Nodes", quantity: 6, unitPrice: 35000.00, total: 210000.00 },
+      { id: "li-2", description: "Amazon Aurora PostgreSQL Multi-AZ Cluster", quantity: 1, unitPrice: 70000.00, total: 70000.00 },
+      { id: "li-3", description: "CloudFront CDN Data Transfer (14TB)", quantity: 14, unitPrice: 2500.00, total: 35000.00 }
     ],
-    taxRate: 0.0,
+    taxRate: 18.0,
     discount: 0.0,
-    subtotal: 3850.50,
-    totalAmount: 3850.50,
+    subtotal: 315000.00,
+    totalAmount: 371700.00,
     approvalTiers: [
       {
         tier: 1,
@@ -77,7 +76,7 @@ const INITIAL_BILLS = [
     category: "Observability & APM",
     department: "Engineering",
     costCenter: "ENG-OPS",
-    currency: "USD",
+    currency: "INR",
     issueDate: "2026-11-03",
     dueDate: "2026-11-30",
     paymentTerms: "Net 30",
@@ -85,13 +84,13 @@ const INITIAL_BILLS = [
     source: "Claude MCP",
     notes: "Annual telemetry and log analytics renewal quote.",
     lineItems: [
-      { id: "li-dd1", description: "Pro APM Host Monitoring (50 hosts)", quantity: 50, unitPrice: 31.00, total: 1550.00 },
-      { id: "li-dd2", description: "Log Management Retention (15-day indexed)", quantity: 1, unitPrice: 650.00, total: 650.00 }
+      { id: "li-dd1", description: "Pro APM Host Monitoring (50 hosts)", quantity: 50, unitPrice: 2500.00, total: 125000.00 },
+      { id: "li-dd2", description: "Log Management Retention (15-day indexed)", quantity: 1, unitPrice: 53000.00, total: 53000.00 }
     ],
-    taxRate: 0.0,
-    discount: 100.00,
-    subtotal: 2200.00,
-    totalAmount: 2100.00,
+    taxRate: 18.0,
+    discount: 8000.00,
+    subtotal: 178000.00,
+    totalAmount: 202040.00,
     approvalTiers: [
       {
         tier: 1,
@@ -122,7 +121,7 @@ const INITIAL_BILLS = [
     category: "Design Software",
     department: "Product",
     costCenter: "PROD-DESIGN",
-    currency: "USD",
+    currency: "INR",
     issueDate: "2026-10-28",
     dueDate: "2026-11-15",
     paymentTerms: "Net 15",
@@ -130,13 +129,13 @@ const INITIAL_BILLS = [
     source: "Human User",
     notes: "Design seats renewal for Q4 product redesign.",
     lineItems: [
-      { id: "li-f1", description: "Figma Enterprise Design Seats", quantity: 8, unitPrice: 75.00, total: 600.00 },
-      { id: "li-f2", description: "FigJam Whiteboard Collaborative Seats", quantity: 15, unitPrice: 5.00, total: 75.00 }
+      { id: "li-f1", description: "Figma Enterprise Design Seats", quantity: 8, unitPrice: 6200.00, total: 49600.00 },
+      { id: "li-f2", description: "FigJam Whiteboard Collaborative Seats", quantity: 15, unitPrice: 420.00, total: 6300.00 }
     ],
-    taxRate: 0.0,
+    taxRate: 18.0,
     discount: 0.0,
-    subtotal: 675.00,
-    totalAmount: 675.00,
+    subtotal: 55900.00,
+    totalAmount: 65962.00,
     approvalTiers: [
       {
         tier: 1,
@@ -174,7 +173,7 @@ const INITIAL_BILLS = [
     category: "Payment Processing",
     department: "Finance",
     costCenter: "FIN-OPS",
-    currency: "USD",
+    currency: "INR",
     issueDate: "2026-10-15",
     dueDate: "2026-10-30",
     paymentTerms: "Due on Receipt",
@@ -182,12 +181,12 @@ const INITIAL_BILLS = [
     source: "Claude MCP",
     notes: "Card processing gateway platform fees for October.",
     lineItems: [
-      { id: "li-s1", description: "Global Merchant Processing Fee (Volopay Corporate Card settlement)", quantity: 1, unitPrice: 1420.00, total: 1420.00 }
+      { id: "li-s1", description: "Merchant Gateway Settlement Charges (Volopay Corporate Card)", quantity: 1, unitPrice: 116000.00, total: 116000.00 }
     ],
-    taxRate: 0.0,
+    taxRate: 18.0,
     discount: 0.0,
-    subtotal: 1420.00,
-    totalAmount: 1420.00,
+    subtotal: 116000.00,
+    totalAmount: 136880.00,
     approvalTiers: [
       {
         tier: 1,
@@ -220,13 +219,13 @@ const INITIAL_BILLS = [
 ];
 
 function ensureDataFile() {
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(INITIAL_BILLS, null, 2), 'utf-8');
-  }
+  fs.writeFileSync(DATA_FILE, JSON.stringify(INITIAL_BILLS, null, 2), 'utf-8');
 }
 
 export function getAllBills() {
-  ensureDataFile();
+  if (!fs.existsSync(DATA_FILE)) {
+    ensureDataFile();
+  }
   try {
     const raw = fs.readFileSync(DATA_FILE, 'utf-8');
     return JSON.parse(raw);
@@ -237,7 +236,6 @@ export function getAllBills() {
 }
 
 export function saveBills(bills) {
-  ensureDataFile();
   fs.writeFileSync(DATA_FILE, JSON.stringify(bills, null, 2), 'utf-8');
 }
 
@@ -294,7 +292,7 @@ export function createBill(data, source = "Claude MCP") {
     }
   ];
 
-  if (totalAmount > 3000) {
+  if (totalAmount > 250000) {
     defaultApprovers.push({
       tier: 2,
       role: "Executive / Founder Approval",
@@ -314,7 +312,7 @@ export function createBill(data, source = "Claude MCP") {
     category: data.category || "General Operations",
     department: data.department || "Operations",
     costCenter: data.costCenter || `${(data.department || "OPS").toUpperCase().substring(0, 3)}-GEN`,
-    currency: data.currency || "USD",
+    currency: "INR",
     issueDate: data.issueDate || now.split('T')[0],
     dueDate: data.dueDate || new Date(Date.now() + 14 * 86400000).toISOString().split('T')[0],
     paymentTerms: data.paymentTerms || "Net 14",
@@ -333,7 +331,7 @@ export function createBill(data, source = "Claude MCP") {
         timestamp: now,
         actor: source,
         action: "Created Bill",
-        details: `Created invoice with ${lineItems.length} line items totaling ${data.currency || "$"}${totalAmount}.`
+        details: `Created invoice with ${lineItems.length} line items totaling ₹${totalAmount.toLocaleString('en-IN')}.`
       }
     ],
     createdAt: now,
@@ -374,9 +372,8 @@ export function updateBill(id, updates, actor = "Human User") {
 
   const auditDetails = [];
   if (updates.vendorName && updates.vendorName !== current.vendorName) auditDetails.push(`Vendor changed to ${updates.vendorName}`);
-  if (updates.totalAmount && updates.totalAmount !== current.totalAmount) auditDetails.push(`Amount updated to $${totalAmount}`);
-  if (updates.status && updates.status !== current.status) auditDetails.push(`Status updated from ${current.status} to ${updates.status}`);
-  if (updates.dueDate && updates.dueDate !== current.dueDate) auditDetails.push(`Due date updated to ${updates.dueDate}`);
+  if (updates.totalAmount && updates.totalAmount !== current.totalAmount) auditDetails.push(`Amount updated to ₹${totalAmount.toLocaleString('en-IN')}`);
+  if (updates.status && updates.status !== current.status) auditDetails.push(`Status updated to ${updates.status}`);
 
   const logEntry = {
     id: `log-${Date.now().toString(36)}`,
@@ -389,6 +386,7 @@ export function updateBill(id, updates, actor = "Human User") {
   const updatedBill = {
     ...current,
     ...updates,
+    currency: "INR",
     lineItems,
     taxRate,
     discount,
@@ -461,7 +459,7 @@ export function markAsPaid(id, paymentMethod = "Volopay Corporate Card (*4491)",
     timestamp: now,
     actor,
     action: "Payment Dispatched",
-    details: `Dispatched payment of ${current.currency} ${current.totalAmount.toLocaleString()} via ${paymentMethod}.`
+    details: `Dispatched payment of ₹${current.totalAmount.toLocaleString('en-IN')} via ${paymentMethod}.`
   };
 
   const updatedBill = {

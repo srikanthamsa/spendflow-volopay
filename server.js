@@ -296,16 +296,16 @@ app.post('/api/simulate-claude', (req, res) => {
       category: "Data Warehouse",
       department: "Engineering",
       costCenter: "ENG-DATA-02",
-      currency: "USD",
+      currency: "INR",
       dueDate: new Date(Date.now() + 20 * 86400000).toISOString().split('T')[0],
       paymentTerms: "Net 30",
       notes: "Parsed from email sent to finance@company.com: Q4 data warehouse compute credits consumption.",
       approverName: "Rajesh Raikwar",
-      taxRate: 0.0,
-      discount: 250.00,
+      taxRate: 18.0,
+      discount: 15000.00,
       lineItems: [
-        { description: "Standard Enterprise Compute Warehouse Credits (500 credits)", quantity: 500, unitPrice: 3.00 },
-        { description: "Serverless Snowpipe Streaming Ingestion", quantity: 1, unitPrice: 450.00 }
+        { description: "Standard Enterprise Compute Warehouse Credits (500 credits)", quantity: 500, unitPrice: 280.00 },
+        { description: "Serverless Snowpipe Streaming Ingestion", quantity: 1, unitPrice: 42000.00 }
       ]
     },
     {
@@ -314,16 +314,16 @@ app.post('/api/simulate-claude', (req, res) => {
       category: "Marketing Automation",
       department: "Marketing",
       costCenter: "MKTG-GROWTH",
-      currency: "USD",
+      currency: "INR",
       dueDate: new Date(Date.now() + 10 * 86400000).toISOString().split('T')[0],
       paymentTerms: "Net 15",
       notes: "Extracted from marketing team vendor quote: Annual contact tier expansion for 25,000 marketing leads.",
       approverName: "Sandeep Juttuga",
-      taxRate: 0.0,
+      taxRate: 18.0,
       discount: 0.0,
       lineItems: [
-        { description: "Marketing Hub Professional (Annual Subscription)", quantity: 1, unitPrice: 890.00 },
-        { description: "Dedicated Transactional Email IP Address", quantity: 1, unitPrice: 300.00 }
+        { description: "Marketing Hub Professional (Annual Subscription)", quantity: 1, unitPrice: 74000.00 },
+        { description: "Dedicated Transactional Email IP Address", quantity: 1, unitPrice: 25000.00 }
       ]
     },
     {
@@ -332,16 +332,16 @@ app.post('/api/simulate-claude', (req, res) => {
       category: "Cybersecurity & Compliance",
       department: "Engineering",
       costCenter: "ENG-SEC",
-      currency: "USD",
+      currency: "INR",
       dueDate: new Date(Date.now() + 15 * 86400000).toISOString().split('T')[0],
       paymentTerms: "Net 15",
       notes: "Extracted via Claude MCP from SOC2 compliance vendor audit request.",
       approverName: "Rajesh Raikwar",
-      taxRate: 0.0,
-      discount: 150.00,
+      taxRate: 18.0,
+      discount: 12000.00,
       lineItems: [
-        { description: "Falcon Endpoint Protection Complete (40 Endpoints)", quantity: 40, unitPrice: 45.00 },
-        { description: "Identity Threat Protection Addon", quantity: 1, unitPrice: 500.00 }
+        { description: "Falcon Endpoint Protection Complete (40 Endpoints)", quantity: 40, unitPrice: 3800.00 },
+        { description: "Identity Threat Protection Addon", quantity: 1, unitPrice: 42000.00 }
       ]
     }
   ];

@@ -26,11 +26,11 @@ export default function ConnectClaudeModal({ onClose }) {
   const prompts = [
     {
       label: "Log an infrastructure invoice",
-      text: "I received an AWS invoice for $3,850.50 due Dec 15th for our cloud production cluster. Create a bill for Engineering under cost center ENG-INFRA, with 2 line items: 'EC2 Compute Instances - $2,900' and 'RDS Aurora PostgreSQL - $950.50'. Assign Rosh as final approver."
+      text: "I received an AWS invoice for ₹3,15,000 due Dec 15th for our cloud production cluster. Create a bill for Engineering under cost center ENG-INFRA, with 2 line items: 'EC2 Compute Instances - ₹2,10,000' and 'RDS Aurora PostgreSQL - ₹1,05,000'. Assign Rosh as final approver."
     },
     {
       label: "Create contractor agreement",
-      text: "Create a vendor bill in SpendFlow for UI Designer Sarah Chen for $5,000 under Product. Add line item 'Design System Redesign Sprint' for $5,000 with Net 15 terms. Assign Sandeep Juttuga as approver."
+      text: "Create a vendor bill in SpendFlow for UI Designer Sarah Chen for ₹4,10,000 under Product. Add line item 'Design System Redesign Sprint' for ₹4,10,000 with Net 15 terms. Assign Sandeep Juttuga as approver."
     },
     {
       label: "Query pending spend",

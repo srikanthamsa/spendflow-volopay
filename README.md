@@ -58,10 +58,10 @@ Restart Claude Desktop. The hammer / tool icon will show `spendflow-mcp` tools a
 ### Step 2: Try These Prompts in Claude
 
 #### Test Prompt 1: Ingesting an AWS Cloud Bill
-> *"I just got an invoice from AWS for $3,850.50 due on Dec 15th for our cloud production cluster. Create a bill for Engineering under cost center ENG-INFRA, with 2 line items: 'EC2 Compute Instances - $2,900' and 'RDS Aurora PostgreSQL - $950.50'. Assign Rosh as the final approver."*
+> *"I just got an invoice from AWS for ₹3,15,000 due on Dec 15th for our cloud production cluster. Create a bill for Engineering under cost center ENG-INFRA, with 2 line items: 'EC2 Compute Instances - ₹2,10,000' and 'RDS Aurora PostgreSQL - ₹1,05,000'. Assign Rosh as the final approver."*
 
 #### Test Prompt 2: Design Contractor Scope-of-Work
-> *"Create a vendor bill in SpendFlow for UI Designer Sarah Chen for $5,000 under Product. Add line item 'Design System Redesign Sprint' for $5,000 with Net 15 terms. Assign Sandeep Juttuga as approver."*
+> *"Create a vendor bill in SpendFlow for UI Designer Sarah Chen for ₹4,10,000 under Product. Add line item 'Design System Redesign Sprint' for ₹4,10,000 with Net 15 terms. Assign Sandeep Juttuga as approver."*
 
 #### Test Prompt 3: Inquiring Company Spend
 > *"What is our company's current pending spend in SpendFlow? List all bills awaiting approval."*

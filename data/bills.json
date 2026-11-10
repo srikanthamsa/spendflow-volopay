@@ -7,7 +7,7 @@
     "category": "Cloud Infrastructure",
     "department": "Engineering",
     "costCenter": "ENG-INFRA-01",
-    "currency": "USD",
+    "currency": "INR",
     "issueDate": "2026-11-01",
     "dueDate": "2026-11-25",
     "paymentTerms": "Net 25",
@@ -19,35 +19,35 @@
         "id": "li-1",
         "description": "EC2 m6i.4xlarge Production Kubernetes Nodes",
         "quantity": 6,
-        "unitPrice": 420,
-        "total": 2520
+        "unitPrice": 35000,
+        "total": 210000
       },
       {
         "id": "li-2",
         "description": "Amazon Aurora PostgreSQL Multi-AZ Cluster",
         "quantity": 1,
-        "unitPrice": 850.5,
-        "total": 850.5
+        "unitPrice": 70000,
+        "total": 70000
       },
       {
         "id": "li-3",
         "description": "CloudFront CDN Data Transfer (14TB)",
         "quantity": 14,
-        "unitPrice": 34.28,
-        "total": 480
+        "unitPrice": 2500,
+        "total": 35000
       }
     ],
-    "taxRate": 0,
+    "taxRate": 18,
     "discount": 0,
-    "subtotal": 3850.5,
-    "totalAmount": 3850.5,
+    "subtotal": 315000,
+    "totalAmount": 371700,
     "approvalTiers": [
       {
         "tier": 1,
         "role": "Department Manager",
         "approverName": "Srikant Hamsa",
         "status": "Approved",
-        "approvedAt": "2026-11-10T07:41:02.928Z",
+        "approvedAt": "2026-11-05T10:15:00Z",
         "notes": "Verified against sprint cloud capacity plan."
       },
       {
@@ -60,13 +60,6 @@
       }
     ],
     "auditLog": [
-      {
-        "id": "log-mwadsbio",
-        "timestamp": "2026-11-10T07:41:02.928Z",
-        "actor": "Quick Approver",
-        "action": "Approved Tier 1",
-        "details": "Tier 1 approved. Waiting for remaining tiers."
-      },
       {
         "id": "log-1",
         "timestamp": "2026-11-02T08:30:00Z",
@@ -83,7 +76,7 @@
       }
     ],
     "createdAt": "2026-11-02T08:30:00Z",
-    "updatedAt": "2026-11-10T07:41:02.928Z"
+    "updatedAt": "2026-11-05T10:15:00Z"
   },
   {
     "id": "bill-datadog-2026",
@@ -93,7 +86,7 @@
     "category": "Observability & APM",
     "department": "Engineering",
     "costCenter": "ENG-OPS",
-    "currency": "USD",
+    "currency": "INR",
     "issueDate": "2026-11-03",
     "dueDate": "2026-11-30",
     "paymentTerms": "Net 30",
@@ -105,21 +98,21 @@
         "id": "li-dd1",
         "description": "Pro APM Host Monitoring (50 hosts)",
         "quantity": 50,
-        "unitPrice": 31,
-        "total": 1550
+        "unitPrice": 2500,
+        "total": 125000
       },
       {
         "id": "li-dd2",
         "description": "Log Management Retention (15-day indexed)",
         "quantity": 1,
-        "unitPrice": 650,
-        "total": 650
+        "unitPrice": 53000,
+        "total": 53000
       }
     ],
-    "taxRate": 0,
-    "discount": 100,
-    "subtotal": 2200,
-    "totalAmount": 2100,
+    "taxRate": 18,
+    "discount": 8000,
+    "subtotal": 178000,
+    "totalAmount": 202040,
     "approvalTiers": [
       {
         "tier": 1,
@@ -150,7 +143,7 @@
     "category": "Design Software",
     "department": "Product",
     "costCenter": "PROD-DESIGN",
-    "currency": "USD",
+    "currency": "INR",
     "issueDate": "2026-10-28",
     "dueDate": "2026-11-15",
     "paymentTerms": "Net 15",
@@ -162,21 +155,21 @@
         "id": "li-f1",
         "description": "Figma Enterprise Design Seats",
         "quantity": 8,
-        "unitPrice": 75,
-        "total": 600
+        "unitPrice": 6200,
+        "total": 49600
       },
       {
         "id": "li-f2",
         "description": "FigJam Whiteboard Collaborative Seats",
         "quantity": 15,
-        "unitPrice": 5,
-        "total": 75
+        "unitPrice": 420,
+        "total": 6300
       }
     ],
-    "taxRate": 0,
+    "taxRate": 18,
     "discount": 0,
-    "subtotal": 675,
-    "totalAmount": 675,
+    "subtotal": 55900,
+    "totalAmount": 65962,
     "approvalTiers": [
       {
         "tier": 1,
@@ -214,7 +207,7 @@
     "category": "Payment Processing",
     "department": "Finance",
     "costCenter": "FIN-OPS",
-    "currency": "USD",
+    "currency": "INR",
     "issueDate": "2026-10-15",
     "dueDate": "2026-10-30",
     "paymentTerms": "Due on Receipt",
@@ -224,16 +217,16 @@
     "lineItems": [
       {
         "id": "li-s1",
-        "description": "Global Merchant Processing Fee (Volopay Corporate Card settlement)",
+        "description": "Merchant Gateway Settlement Charges (Volopay Corporate Card)",
         "quantity": 1,
-        "unitPrice": 1420,
-        "total": 1420
+        "unitPrice": 116000,
+        "total": 116000
       }
     ],
-    "taxRate": 0,
+    "taxRate": 18,
     "discount": 0,
-    "subtotal": 1420,
-    "totalAmount": 1420,
+    "subtotal": 116000,
+    "totalAmount": 136880,
     "approvalTiers": [
       {
         "tier": 1,

@@ -54,8 +54,8 @@ export default function BillDetailModal({
       id: `li-${Date.now()}`,
       description: "Service deliverable",
       quantity: 1,
-      unitPrice: 100.00,
-      total: 100.00
+      unitPrice: 15000.00,
+      total: 15000.00
     };
     const newItems = [...formData.lineItems, newItem];
     const { subtotal, totalAmount } = recalculateTotals(newItems, formData.taxRate, formData.discount);
@@ -266,7 +266,7 @@ export default function BillDetailModal({
                             />
                           </td>
                           <td className="p-2 text-right font-mono text-zinc-200 tabular-nums">
-                            {formData.currency} {Number(item.total).toFixed(2)}
+                            ₹{Number(item.total).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                           </td>
                           <td className="p-2 text-center">
                             <button
@@ -299,7 +299,7 @@ export default function BillDetailModal({
                 <div className="w-full sm:w-56 p-3 rounded-lg bg-zinc-900/40 border border-zinc-800 space-y-1.5 text-xs font-mono">
                   <div className="flex justify-between text-zinc-400">
                     <span className="font-sans">Subtotal</span>
-                    <span>{formData.currency} {formData.subtotal.toFixed(2)}</span>
+                    <span>₹{Number(formData.subtotal).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                   </div>
                   <div className="flex items-center justify-between text-zinc-400">
                     <span className="font-sans">Tax %</span>
@@ -323,7 +323,7 @@ export default function BillDetailModal({
                   </div>
                   <div className="pt-2 border-t border-zinc-800 flex justify-between font-semibold text-zinc-100">
                     <span className="font-sans font-medium">Total</span>
-                    <span>{formData.currency} {formData.totalAmount.toFixed(2)}</span>
+                    <span>₹{Number(formData.totalAmount).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                   </div>
                 </div>
               </div>

@@ -8,15 +8,15 @@ export default function NewBillModal({ onClose, onSubmit }) {
     category: 'Software & Cloud',
     department: 'Engineering',
     costCenter: 'ENG-OPS',
-    currency: 'USD',
+    currency: 'INR',
     dueDate: new Date(Date.now() + 14 * 86400000).toISOString().split('T')[0],
     paymentTerms: 'Net 14',
     notes: '',
     approverName: 'Rajesh Raikwar',
-    taxRate: 0,
+    taxRate: 18,
     discount: 0,
     lineItems: [
-      { description: 'Cloud infrastructure / subscription', quantity: 1, unitPrice: 1200.00 }
+      { description: 'Cloud infrastructure / subscription', quantity: 1, unitPrice: 95000.00 }
     ]
   });
 
@@ -171,7 +171,7 @@ export default function NewBillModal({ onClose, onSubmit }) {
           <div className="p-3 rounded-lg bg-zinc-950 border border-zinc-800 flex justify-between items-center font-mono">
             <span className="font-sans text-zinc-400">Total amount</span>
             <span className="text-sm font-medium text-zinc-100">
-              {formData.currency} {total.toFixed(2)}
+              ₹{total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </span>
           </div>
 

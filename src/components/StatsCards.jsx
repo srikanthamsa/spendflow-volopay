@@ -6,22 +6,22 @@ export default function StatsCards({ stats }) {
   const cards = [
     {
       label: "Total spend",
-      value: `$${(stats.totalSpend || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${(stats.totalSpend || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       meta: `${stats.totalBills || 0} invoices recorded`
     },
     {
       label: "Pending review",
-      value: `$${(stats.pendingAmount || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${(stats.pendingAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       meta: `${stats.pendingCount || 0} awaiting approval`
     },
     {
       label: "Approved",
-      value: `$${(stats.approvedAmount || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${(stats.approvedAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       meta: `${stats.approvedCount || 0} ready for settlement`
     },
     {
       label: "Settled via Volopay",
-      value: `$${(stats.paidAmount || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${(stats.paidAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       meta: `${stats.paidCount || 0} card payouts executed`
     }
   ];

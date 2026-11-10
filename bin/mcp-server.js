@@ -59,7 +59,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             currency: {
               type: "string",
-              description: "Currency code (e.g. 'USD', 'EUR', 'INR', 'SGD'). Default 'USD'."
+              description: "Currency code (default 'INR')."
             },
             dueDate: {
               type: "string",
