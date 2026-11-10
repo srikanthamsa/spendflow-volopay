@@ -7,10 +7,10 @@
 
 ## 🚀 Live Links & Deliverables
 
-1. **Live Web App**: [https://claims-sec-coins-petition.trycloudflare.com](https://claims-sec-coins-petition.trycloudflare.com)  
+1. **Live Web App**: [https://herein-table-firmware-concord.trycloudflare.com](https://herein-table-firmware-concord.trycloudflare.com)  
    *(No login required — test credentials pre-authenticated)*
 2. **GitHub Repository**: [https://github.com/srikanthamsa/spendflow-volopay](https://github.com/srikanthamsa/spendflow-volopay)
-3. **MCP SSE Endpoint**: `https://claims-sec-coins-petition.trycloudflare.com/sse`
+3. **MCP Remote SSE Link**: `https://herein-table-firmware-concord.trycloudflare.com/sse`
 4. **Local MCP Binary**: `node bin/mcp-server.js`
 
 ---
