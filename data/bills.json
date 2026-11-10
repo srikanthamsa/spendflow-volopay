@@ -1,0 +1,259 @@
+[
+  {
+    "id": "bill-aws-2026",
+    "invoiceNumber": "INV-AWS-88291",
+    "vendorName": "Amazon Web Services (AWS)",
+    "vendorLogo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "category": "Cloud Infrastructure",
+    "department": "Engineering",
+    "costCenter": "ENG-INFRA-01",
+    "currency": "USD",
+    "issueDate": "2026-11-01",
+    "dueDate": "2026-11-25",
+    "paymentTerms": "Net 25",
+    "status": "Pending Approval",
+    "source": "Claude MCP",
+    "notes": "Monthly production compute and database cluster. Claude extracted this from AWS billing email summary.",
+    "lineItems": [
+      {
+        "id": "li-1",
+        "description": "EC2 m6i.4xlarge Production Kubernetes Nodes",
+        "quantity": 6,
+        "unitPrice": 420,
+        "total": 2520
+      },
+      {
+        "id": "li-2",
+        "description": "Amazon Aurora PostgreSQL Multi-AZ Cluster",
+        "quantity": 1,
+        "unitPrice": 850.5,
+        "total": 850.5
+      },
+      {
+        "id": "li-3",
+        "description": "CloudFront CDN Data Transfer (14TB)",
+        "quantity": 14,
+        "unitPrice": 34.28,
+        "total": 480
+      }
+    ],
+    "taxRate": 0,
+    "discount": 0,
+    "subtotal": 3850.5,
+    "totalAmount": 3850.5,
+    "approvalTiers": [
+      {
+        "tier": 1,
+        "role": "Department Manager",
+        "approverName": "Srikant Hamsa",
+        "status": "Approved",
+        "approvedAt": "2026-11-05T10:15:00Z",
+        "notes": "Verified against sprint cloud capacity plan."
+      },
+      {
+        "tier": 2,
+        "role": "CTO / Executive",
+        "approverName": "Rajesh Raikwar",
+        "status": "Pending",
+        "approvedAt": null,
+        "notes": null
+      }
+    ],
+    "auditLog": [
+      {
+        "id": "log-1",
+        "timestamp": "2026-11-02T08:30:00Z",
+        "actor": "Claude MCP Assistant",
+        "action": "Created Bill",
+        "details": "Parsed AWS statement and ingested 3 line items via create_vendor_bill MCP tool."
+      },
+      {
+        "id": "log-2",
+        "timestamp": "2026-11-05T10:15:00Z",
+        "actor": "Srikant Hamsa",
+        "action": "Tier 1 Approval Granted",
+        "details": "Manager approval confirmed."
+      }
+    ],
+    "createdAt": "2026-11-02T08:30:00Z",
+    "updatedAt": "2026-11-05T10:15:00Z"
+  },
+  {
+    "id": "bill-datadog-2026",
+    "invoiceNumber": "DD-94812",
+    "vendorName": "Datadog, Inc.",
+    "vendorLogo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Datadog_logo.svg",
+    "category": "Observability & APM",
+    "department": "Engineering",
+    "costCenter": "ENG-OPS",
+    "currency": "USD",
+    "issueDate": "2026-11-03",
+    "dueDate": "2026-11-30",
+    "paymentTerms": "Net 30",
+    "status": "Pending Approval",
+    "source": "Claude MCP",
+    "notes": "Annual telemetry and log analytics renewal quote.",
+    "lineItems": [
+      {
+        "id": "li-dd1",
+        "description": "Pro APM Host Monitoring (50 hosts)",
+        "quantity": 50,
+        "unitPrice": 31,
+        "total": 1550
+      },
+      {
+        "id": "li-dd2",
+        "description": "Log Management Retention (15-day indexed)",
+        "quantity": 1,
+        "unitPrice": 650,
+        "total": 650
+      }
+    ],
+    "taxRate": 0,
+    "discount": 100,
+    "subtotal": 2200,
+    "totalAmount": 2100,
+    "approvalTiers": [
+      {
+        "tier": 1,
+        "role": "Engineering Lead",
+        "approverName": "Rajesh Raikwar",
+        "status": "Pending",
+        "approvedAt": null,
+        "notes": null
+      }
+    ],
+    "auditLog": [
+      {
+        "id": "log-dd1",
+        "timestamp": "2026-11-03T11:00:00Z",
+        "actor": "Claude MCP Assistant",
+        "action": "Created Bill",
+        "details": "Parsed renewal quote and applied volume discount via MCP."
+      }
+    ],
+    "createdAt": "2026-11-03T11:00:00Z",
+    "updatedAt": "2026-11-03T11:00:00Z"
+  },
+  {
+    "id": "bill-figma-2026",
+    "invoiceNumber": "FIG-2026-441",
+    "vendorName": "Figma (Adobe)",
+    "vendorLogo": "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+    "category": "Design Software",
+    "department": "Product",
+    "costCenter": "PROD-DESIGN",
+    "currency": "USD",
+    "issueDate": "2026-10-28",
+    "dueDate": "2026-11-15",
+    "paymentTerms": "Net 15",
+    "status": "Approved",
+    "source": "Human User",
+    "notes": "Design seats renewal for Q4 product redesign.",
+    "lineItems": [
+      {
+        "id": "li-f1",
+        "description": "Figma Enterprise Design Seats",
+        "quantity": 8,
+        "unitPrice": 75,
+        "total": 600
+      },
+      {
+        "id": "li-f2",
+        "description": "FigJam Whiteboard Collaborative Seats",
+        "quantity": 15,
+        "unitPrice": 5,
+        "total": 75
+      }
+    ],
+    "taxRate": 0,
+    "discount": 0,
+    "subtotal": 675,
+    "totalAmount": 675,
+    "approvalTiers": [
+      {
+        "tier": 1,
+        "role": "Product Lead",
+        "approverName": "Sandeep Juttuga",
+        "status": "Approved",
+        "approvedAt": "2026-10-30T14:20:00Z",
+        "notes": "Approved for product team roadmap work."
+      }
+    ],
+    "auditLog": [
+      {
+        "id": "log-f1",
+        "timestamp": "2026-10-28T09:00:00Z",
+        "actor": "Srikant Hamsa",
+        "action": "Created Bill",
+        "details": "Created manually for design software licensing."
+      },
+      {
+        "id": "log-f2",
+        "timestamp": "2026-10-30T14:20:00Z",
+        "actor": "Sandeep Juttuga",
+        "action": "Approval Granted",
+        "details": "Founder office approval confirmed."
+      }
+    ],
+    "createdAt": "2026-10-28T09:00:00Z",
+    "updatedAt": "2026-10-30T14:20:00Z"
+  },
+  {
+    "id": "bill-stripe-2026",
+    "invoiceNumber": "STRIPE-FEE-1029",
+    "vendorName": "Stripe Technology Inc.",
+    "vendorLogo": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
+    "category": "Payment Processing",
+    "department": "Finance",
+    "costCenter": "FIN-OPS",
+    "currency": "USD",
+    "issueDate": "2026-10-15",
+    "dueDate": "2026-10-30",
+    "paymentTerms": "Due on Receipt",
+    "status": "Paid",
+    "source": "Claude MCP",
+    "notes": "Card processing gateway platform fees for October.",
+    "lineItems": [
+      {
+        "id": "li-s1",
+        "description": "Global Merchant Processing Fee (Volopay Corporate Card settlement)",
+        "quantity": 1,
+        "unitPrice": 1420,
+        "total": 1420
+      }
+    ],
+    "taxRate": 0,
+    "discount": 0,
+    "subtotal": 1420,
+    "totalAmount": 1420,
+    "approvalTiers": [
+      {
+        "tier": 1,
+        "role": "Head of Finance",
+        "approverName": "Sandeep Juttuga",
+        "status": "Approved",
+        "approvedAt": "2026-10-18T16:00:00Z",
+        "notes": "Approved."
+      }
+    ],
+    "auditLog": [
+      {
+        "id": "log-s1",
+        "timestamp": "2026-10-15T08:00:00Z",
+        "actor": "Claude MCP Assistant",
+        "action": "Created Bill",
+        "details": "Auto-ingested from Stripe merchant invoice PDF."
+      },
+      {
+        "id": "log-s2",
+        "timestamp": "2026-10-25T11:45:00Z",
+        "actor": "Finance Ops",
+        "action": "Dispatched Payment",
+        "details": "Paid via Volopay Virtual Corporate Card (*4491)."
+      }
+    ],
+    "createdAt": "2026-10-15T08:00:00Z",
+    "updatedAt": "2026-10-25T11:45:00Z"
+  }
+]
