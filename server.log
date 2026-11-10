@@ -1,0 +1,3 @@
+SpendFlow Web & MCP Server running at http://localhost:3000
+- Web App: http://localhost:3000
+- MCP SSE Endpoint: http://localhost:3000/sse

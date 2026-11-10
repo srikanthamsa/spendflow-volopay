@@ -47,7 +47,7 @@
         "role": "Department Manager",
         "approverName": "Srikant Hamsa",
         "status": "Approved",
-        "approvedAt": "2026-11-05T10:15:00Z",
+        "approvedAt": "2026-11-10T07:41:02.928Z",
         "notes": "Verified against sprint cloud capacity plan."
       },
       {
@@ -60,6 +60,13 @@
       }
     ],
     "auditLog": [
+      {
+        "id": "log-mwadsbio",
+        "timestamp": "2026-11-10T07:41:02.928Z",
+        "actor": "Quick Approver",
+        "action": "Approved Tier 1",
+        "details": "Tier 1 approved. Waiting for remaining tiers."
+      },
       {
         "id": "log-1",
         "timestamp": "2026-11-02T08:30:00Z",
@@ -76,7 +83,7 @@
       }
     ],
     "createdAt": "2026-11-02T08:30:00Z",
-    "updatedAt": "2026-11-05T10:15:00Z"
+    "updatedAt": "2026-11-10T07:41:02.928Z"
   },
   {
     "id": "bill-datadog-2026",
