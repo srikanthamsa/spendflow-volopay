@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { X, Plus, Trash2, FileText, Check } from 'lucide-react';
+import { X, Plus, Trash2 } from 'lucide-react';
 
 export default function NewBillModal({ onClose, onSubmit }) {
   const [formData, setFormData] = useState({
     vendorName: '',
     invoiceNumber: `INV-${Math.floor(10000 + Math.random() * 90000)}`,
-    category: 'Software & SaaS',
+    category: 'Software & Cloud',
     department: 'Engineering',
     costCenter: 'ENG-OPS',
     currency: 'USD',
@@ -16,7 +16,7 @@ export default function NewBillModal({ onClose, onSubmit }) {
     taxRate: 0,
     discount: 0,
     lineItems: [
-      { description: 'Cloud Infrastructure / Software Subscription', quantity: 1, unitPrice: 1200.00 }
+      { description: 'Cloud infrastructure / subscription', quantity: 1, unitPrice: 1200.00 }
     ]
   });
 
@@ -29,7 +29,7 @@ export default function NewBillModal({ onClose, onSubmit }) {
   const handleAddLineItem = () => {
     setFormData({
       ...formData,
-      lineItems: [...formData.lineItems, { description: 'Additional Service', quantity: 1, unitPrice: 250.00 }]
+      lineItems: [...formData.lineItems, { description: 'Additional item', quantity: 1, unitPrice: 200.00 }]
     });
   };
 
@@ -43,8 +43,8 @@ export default function NewBillModal({ onClose, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.vendorName) {
-      alert('Please enter a vendor name.');
+    if (!formData.vendorName.trim()) {
+      alert('Enter a vendor name');
       return;
     }
     onSubmit(formData);
@@ -57,47 +57,47 @@ export default function NewBillModal({ onClose, onSubmit }) {
   const total = Math.max(0, subtotal + (subtotal * (Number(formData.taxRate) || 0) / 100) - (Number(formData.discount) || 0));
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-xl bg-[#121214] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden my-6">
         
-        <div className="p-5 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-zinc-800 flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-bold text-white tracking-tight">Create Manual Vendor Bill</h2>
-            <p className="text-xs text-slate-400">Add an invoice directly to SpendFlow for approval routing</p>
+            <h2 className="text-base font-semibold text-zinc-100 tracking-tight">New invoice</h2>
+            <p className="text-xs text-zinc-500 mt-0.5">Record a vendor payable directly</p>
           </div>
-          <button onClick={onClose} className="p-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white">
-            <X className="w-5 h-5" />
+          <button onClick={onClose} className="p-1.5 rounded-md text-zinc-400 hover:text-zinc-200">
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="p-5 space-y-4 max-h-[70vh] overflow-y-auto text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Vendor Name *</label>
+              <label className="block text-[11px] font-normal text-zinc-500 mb-1">Vendor name</label>
               <input
                 type="text"
                 required
-                placeholder="e.g. Google Cloud, Vercel, Contractor"
+                placeholder="AWS, Stripe, Contractor"
                 value={formData.vendorName}
                 onChange={(e) => setFormData({ ...formData, vendorName: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500"
+                className="w-full px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 rounded-md text-zinc-200 focus:outline-none focus:border-zinc-700"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Invoice Number</label>
+              <label className="block text-[11px] font-normal text-zinc-500 mb-1">Invoice number</label>
               <input
                 type="text"
                 value={formData.invoiceNumber}
                 onChange={(e) => setFormData({ ...formData, invoiceNumber: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white font-mono focus:outline-none focus:border-indigo-500"
+                className="w-full px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 rounded-md text-zinc-200 font-mono focus:outline-none focus:border-zinc-700"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Department</label>
+              <label className="block text-[11px] font-normal text-zinc-500 mb-1">Department</label>
               <select
                 value={formData.department}
                 onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500"
+                className="w-full px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 rounded-md text-zinc-200 focus:outline-none focus:border-zinc-700"
               >
                 <option value="Engineering">Engineering</option>
                 <option value="Product">Product</option>
@@ -107,50 +107,28 @@ export default function NewBillModal({ onClose, onSubmit }) {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Approver Name</label>
-              <input
-                type="text"
-                value={formData.approverName}
-                onChange={(e) => setFormData({ ...formData, approverName: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Due Date</label>
+              <label className="block text-[11px] font-normal text-zinc-500 mb-1">Due date</label>
               <input
                 type="date"
                 value={formData.dueDate}
                 onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500"
+                className="w-full px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 rounded-md text-zinc-200 focus:outline-none focus:border-zinc-700"
               />
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">Currency</label>
-              <select
-                value={formData.currency}
-                onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                className="w-full px-3 py-2 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500"
-              >
-                <option value="USD">USD ($)</option>
-                <option value="EUR">EUR (€)</option>
-                <option value="INR">INR (₹)</option>
-                <option value="SGD">SGD (S$)</option>
-              </select>
             </div>
           </div>
 
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-xs font-semibold text-slate-400">Line Items</label>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="block text-[11px] font-normal text-zinc-500">Items</label>
               <button
                 type="button"
                 onClick={handleAddLineItem}
-                className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1"
+                className="text-[11px] text-zinc-400 hover:text-zinc-200 flex items-center gap-1"
               >
-                <Plus className="w-3.5 h-3.5" /> Add Item
+                <Plus className="w-3 h-3" /> Add item
               </button>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               {formData.lineItems.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   <input
@@ -158,7 +136,7 @@ export default function NewBillModal({ onClose, onSubmit }) {
                     placeholder="Description"
                     value={item.description}
                     onChange={(e) => handleLineItemChange(idx, 'description', e.target.value)}
-                    className="flex-1 px-3 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded-lg text-white"
+                    className="flex-1 px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-zinc-200"
                   />
                   <input
                     type="number"
@@ -166,7 +144,7 @@ export default function NewBillModal({ onClose, onSubmit }) {
                     placeholder="Qty"
                     value={item.quantity}
                     onChange={(e) => handleLineItemChange(idx, 'quantity', e.target.value)}
-                    className="w-16 px-2 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded-lg text-white text-center"
+                    className="w-14 px-1.5 py-1 bg-zinc-900 border border-zinc-800 rounded text-zinc-200 text-center"
                   />
                   <input
                     type="number"
@@ -174,13 +152,13 @@ export default function NewBillModal({ onClose, onSubmit }) {
                     placeholder="Price"
                     value={item.unitPrice}
                     onChange={(e) => handleLineItemChange(idx, 'unitPrice', e.target.value)}
-                    className="w-24 px-2 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded-lg text-white text-right font-mono"
+                    className="w-20 px-1.5 py-1 bg-zinc-900 border border-zinc-800 rounded text-zinc-200 text-right font-mono"
                   />
                   {formData.lineItems.length > 1 && (
                     <button
                       type="button"
                       onClick={() => handleDeleteLineItem(idx)}
-                      className="p-1.5 text-slate-500 hover:text-rose-400"
+                      className="p-1 text-zinc-600 hover:text-zinc-300"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
@@ -190,9 +168,9 @@ export default function NewBillModal({ onClose, onSubmit }) {
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-800/40 border border-slate-800 flex justify-between items-center text-xs">
-            <span className="text-slate-400">Total Bill Amount:</span>
-            <span className="text-base font-bold font-mono text-indigo-400">
+          <div className="p-3 rounded-lg bg-zinc-950 border border-zinc-800 flex justify-between items-center font-mono">
+            <span className="font-sans text-zinc-400">Total amount</span>
+            <span className="text-sm font-medium text-zinc-100">
               {formData.currency} {total.toFixed(2)}
             </span>
           </div>
@@ -201,15 +179,15 @@ export default function NewBillModal({ onClose, onSubmit }) {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-semibold rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700"
+              className="px-3 py-1.5 text-xs font-medium rounded-md bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30"
+              className="px-4 py-1.5 text-xs font-medium rounded-md bg-white text-zinc-950 hover:bg-zinc-200 transition-colors"
             >
-              Create Bill
+              Create invoice
             </button>
           </div>
         </form>
